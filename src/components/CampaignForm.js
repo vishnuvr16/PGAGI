@@ -5,7 +5,6 @@ import {
   createCampaign,
 } from "../api";
 import "../index.css";
-import { useNavigate } from "react-router-dom";
 
 const CreateCampaign = () => {
   const [languages, setLanguages] = useState([]);
@@ -25,7 +24,6 @@ const CreateCampaign = () => {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchLanguagesAndVoices = async () => {
@@ -55,8 +53,6 @@ const CreateCampaign = () => {
       setLoading(true);
       console.log("formData", formData);
       await createCampaign(formData);
-      alert("Campign created successfully")
-      setFormData("")
     } catch (err) {
       setError(err.message);
     } finally {
@@ -69,27 +65,7 @@ const CreateCampaign = () => {
     return <div className="text-center py-4 text-red-500">Error: {error}</div>;
 
   return (
-    <div className="max-w-lg mx-auto p-6 bg-white my-5 shadow-lg rounded-lg">
-      <button
-        onClick={() => navigate(-1)}
-        className="absolute top-4 left-4 p-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition duration-300"
-      >
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M15 19l-7-7 7-7"
-          />
-        </svg>
-      </button>
-      <h2 className="font-bold text-3xl text-blue flex justify-center my-10">Create Campaign</h2>
+    <div className="max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <label className="block text-sm font-medium text-gray-700">

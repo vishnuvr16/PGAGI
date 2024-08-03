@@ -115,7 +115,7 @@ const MakeCall = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-4 bg-white shadow-md rounded-lg">
+    <div className="max-w-2xl mx-auto p-4 bg-white shadow-md rounded-lg my-10">
       <h1 className="text-2xl font-bold mb-4">Upload Contacts and Make Calls</h1>
 
       <div className="mb-4">

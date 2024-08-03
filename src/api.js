@@ -185,6 +185,7 @@ export const getCallStatus = async (callID) => {
       }
     );
     console.log(response);
+    return response.data;
   } catch (error) {
     console.log(error);
   }
@@ -204,6 +205,7 @@ export const getTranscription = async (callID) => {
       }
     );
     console.log(response);
+    return response.data;
   } catch (error) {
     console.log(error);
   }
